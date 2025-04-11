@@ -59,7 +59,11 @@ county_options = state_county_map[state]
 county = st.sidebar.selectbox("Select County", county_options)
 
 # Other Inputs
-hour = st.sidebar.slider("What's the timeframe you are looking at?", 0, 23)
+hour = st.sidebar.select_slider(
+    "Select timeframe (in hours):",
+    options=list(range(0, 121, 12))
+)
+
 
 business_category = st.sidebar.selectbox(
     "Business Category",
